@@ -1,0 +1,11 @@
+app:
+  container_name: tensorboard
+  build: .
+  environment: 
+    VIRTUAL_HOST: tensorboard.localtest.me
+  volumes:
+    - .:/opt/app
+  working_dir: /opt/app
+  ports:
+    - 6006:6006
+  command: tensorboard --logdir=training_logs/
