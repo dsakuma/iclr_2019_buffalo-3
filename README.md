@@ -57,3 +57,13 @@ python comparisons.py run_baseline maxout cifar10 --epochs=150 --h-layers=600
 
 ### Table 1: Circle
 #### Omitted
+
+
+# Usage with Docker
+Start tensorboard:
+
+    docker-compose up
+
+Open bash
+
+    docker-compose run app bash
