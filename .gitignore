@@ -5,3 +5,6 @@ __pycache__/
 
 # Data
 data/
+
+# Logs
+training_logs/
