@@ -41,3 +41,8 @@ docker-compose up
 ```
 docker-compose run app bash
 ```
+
+### Examples
+```
+docker-compose run app python src/comparisons.py run_denmo mnist --epochs=1 --dilations=5 --erosions=5
+``

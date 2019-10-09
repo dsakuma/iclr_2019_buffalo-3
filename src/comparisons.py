@@ -1,6 +1,5 @@
 import fire
 import torch
-import numpy as np
 
 from utils import load_cifar10, load_fashion_mnist, load_mnist
 
@@ -10,7 +9,7 @@ from pathlib import Path
 from torch_harness import TorchHarness
 from dilation_erosion import DenMoNet
 
-model_dir = Path(__file__).parent / 'models'
+model_dir = Path(__file__).parent.parent / 'models'
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 

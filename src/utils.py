@@ -5,7 +5,7 @@ from typing import Tuple
 
 from pathlib import Path
 
-data_dir = Path(__file__).parent / 'data'
+data_dir = Path(__file__).parent.parent / 'data'
 
 # Datasets
 
