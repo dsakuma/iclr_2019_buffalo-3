@@ -4,17 +4,18 @@
 - Yi Feng Yan               
 
 # Usage
-General usage:
+
+## General usage:
 
     python comparisons.py run_denmo $dset $dilations $erosions $epochs
     python comparisions.py run_baseline $model $dset $width $epochs
     
-Run `scripts/training2csv.py` to convert Tensorflow logs to result CSVs.
 
 ## Getting tensorboard working
-* `pip install tensorboard`
-* `tensorboard --logdir training-logs/`
-
+```
+pip install tensorboard
+tensorboard --logdir training-logs/
+```
 
 ## Examples:
 ```
@@ -32,17 +33,17 @@ python comparisons.py run_baseline maxout cifar10 --epochs=150 --h-layers=200
 
 # Usage with Docker
 
-### Start tensorboard:
+## General Usage
+```
+docker-compose run app python comparisons.py run_denmo mnist --epochs=400 --dilations=5 --erosions=5
+```
+
+## Start tensorboard:
 ```
 docker-compose up
 ```
 
-### Open bash
-```
-docker-compose run app bash
-```
-
-### Examples
+## Examples
 ```
 docker-compose run app python src/comparisons.py run_denmo mnist --epochs=1 --dilations=5 --erosions=5
 ``
