@@ -8,3 +8,4 @@ fire==0.2.1
 matplotlib==3.1.1
 tensorflow==1.14.0
 tensorboard==1.14.0
+scikit-learn==0.21.3
