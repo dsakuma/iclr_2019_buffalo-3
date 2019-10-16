@@ -31,3 +31,6 @@ def load_mnist() -> Tuple[data.Dataset, data.Dataset, int]:
     train_set = datasets.MNIST(str(data_dir), train=True, download=True, transform=trans)
     test_set = datasets.MNIST(str(data_dir), train=False, download=True, transform=trans)
     return train_set, test_set, 28 * 28
+
+def load_j() -> Tuple[data.Dataset, data.Dataset, int]: 
+    return None, None, 99

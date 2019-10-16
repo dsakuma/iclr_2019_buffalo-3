@@ -43,7 +43,7 @@ class TorchHarness:
 
         train_loader = torch.utils.data.DataLoader(dataset=self.train, **dl_args)
         valid_loader = torch.utils.data.DataLoader(dataset=self.test, **dl_args)
-
+        # import pdb; pdb.set_trace()
         # after we hit > 75% accuracy, we begin saving model checkpoints:
         # current_accuracy = 50.
         for epoch in range(1, self.epochs + 1):
@@ -58,6 +58,9 @@ class TorchHarness:
 
         self.model.train()
         for batch_idx, (data, target) in enumerate(train_loader):
+            import pdb; pdb.set_trace()
+            # data.shape -> torch.Size([32, 1, 28, 28])
+            # target.shape -> torch.Size([32])
             data, target = data.to(self.device), target.to(self.device)
 
             optimizer.zero_grad()

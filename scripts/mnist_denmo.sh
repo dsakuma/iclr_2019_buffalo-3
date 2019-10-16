@@ -1,1 +1,1 @@
-python src/comparisons.py run_denmo mnist 1 5    5
+python src/comparisons.py run_denmo mnist --epochs=1 --dilations=0 --erosions=1
