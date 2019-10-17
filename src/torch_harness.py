@@ -49,6 +49,7 @@ class TorchHarness:
         for epoch in range(1, self.epochs + 1):
             self.train_epoch(train_loader, optimizer, epoch, writer)
             self.valid_epoch(valid_loader, epoch, writer)
+        for param in self.model.parameters(): print(param.data)
 
     def train_epoch(self, train_loader, optimizer, epoch, writer):
         """ Train the model """
@@ -58,7 +59,7 @@ class TorchHarness:
 
         self.model.train()
         for batch_idx, (data, target) in enumerate(train_loader):
-            import pdb; pdb.set_trace()
+            # import pdb; pdb.set_trace()
             # data.shape -> torch.Size([32, 1, 28, 28])
             # target.shape -> torch.Size([32])
             data, target = data.to(self.device), target.to(self.device)

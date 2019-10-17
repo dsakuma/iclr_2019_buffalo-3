@@ -1,5 +1,6 @@
 from torch.utils import data
 from torchvision import datasets, transforms
+from custom_dataset_from_image import CustomDatasetFromImage
 
 from typing import Tuple
 
@@ -32,5 +33,16 @@ def load_mnist() -> Tuple[data.Dataset, data.Dataset, int]:
     test_set = datasets.MNIST(str(data_dir), train=False, download=True, transform=trans)
     return train_set, test_set, 28 * 28
 
-def load_j() -> Tuple[data.Dataset, data.Dataset, int]: 
-    return None, None, 99
+def load_j_erosion() -> Tuple[data.Dataset, data.Dataset, int]:
+    patch_size = 5
+    trans = transforms.Compose([transforms.ToTensor()]) 
+    train_set = CustomDatasetFromImage('../data/J/j.png',
+                                       '../data/J/j_eroded.png',
+                                       patch_size,
+                                       trans)
+    test_set = CustomDatasetFromImage('../data/J/j.png',
+                                       '../data/J/j_eroded.png',
+                                       patch_size,
+                                       trans)
+    
+    return train_set, test_set, patch_size*patch_size
